@@ -4,12 +4,12 @@ using Xunit;
 
 namespace BankKata.Test.Features
 {
-    public class AccountShould
+    public class PrintStatementFeature
     {
         private readonly Account _account;
         private readonly Mock<IConsole> _console;
 
-        public AccountShould()
+        public PrintStatementFeature()
         {
             _account = new Account();
             _console = new Mock<IConsole>();
