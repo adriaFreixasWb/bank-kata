@@ -8,10 +8,12 @@ namespace BankKata.Test.Features
     {
         private readonly Account _account;
         private readonly Mock<IConsole> _console;
+        private readonly Mock<IAccountRepository> _accountRepository;
 
         public PrintStatementFeature()
         {
-            _account = new Account();
+            _accountRepository = new Mock<IAccountRepository>();
+            _account = new Account(_accountRepository.Object);
             _console = new Mock<IConsole>();
         }
         [Fact]
